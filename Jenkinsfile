@@ -1,12 +1,14 @@
 pipeline {
-	agent any
-	stages {
-		stage ("creating cutomworkspace") {
-                steps {
-		customWorkspace '/mnt/23Q1'
+	agent {
+	 label { 
+	label ("built-in")
+	customWorkspace '/mnt/23Q1'
+              
 	}
-	}
-     
+
+   }         
+ 
+	  stages {
     	stage ('install docker') {
 			steps {
 			sh 'yum install docker -y ; systemctl start docker'
