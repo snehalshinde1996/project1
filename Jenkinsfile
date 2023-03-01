@@ -11,7 +11,7 @@ pipeline {
 	  stages {
     	stage ('install docker') {
 			steps {
-			sh 'yum install docker -y ; systemctl start docker'
+			sh 'sudo yum install docker -y ; systemctl start docker'
 			}
 		}
 		stage ('clone repository') {
