@@ -6,8 +6,8 @@ pipeline {
 		customWorkspace '/mnt/23Q1'
 	}
 	}
-       stages {
-		stage ('install docker') {
+     
+    	stage ('install docker') {
 			steps {
 			sh 'yum install docker -y ; systemctl start docker'
 			}
@@ -50,4 +50,4 @@ pipeline {
 		}
 	}
 }
-}
+
