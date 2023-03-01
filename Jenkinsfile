@@ -14,7 +14,6 @@ pipeline {
 		}
 		stage ('Deploy to 23Q1') {
 			steps {
-			sh 'rm -rf /mnt/23Q1/*'
 			sh 'git clone https://github.com/snehalshinde1996/project1.git -b 23Q1'
 			sh 'chmod 777 /mnt/23Q1/project1/index.html'
 			sh 'docker run -itdp 80:80 --name 23Q1 httpd'
